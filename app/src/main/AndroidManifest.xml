@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mayuresh.lasttry">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <permission
+        android:name="com.example.mayuresh.lasttry.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.mayuresh.lasttry.permission.C2D_MESSAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/lancherbl"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LogIn"
+            android:label="@string/title_activity_log_in" />
+        <activity
+            android:name=".SignUp"
+            android:label="@string/title_activity_sign_up" />
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.mayuresh.lasttry" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".MyGcmListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".RegistrationIntentService"
+            android:exported="false"></service>
+
+        <activity
+            android:name=".GeneralNotices"
+            android:label="@string/title_activity_general_notices"></activity>
+        <activity
+            android:name=".DepartmentalNotices"
+            android:label="@string/title_activity_departmental_notices"></activity>
+        <activity
+            android:name=".TPO_Notices"
+            android:label="@string/title_activity_tpo__notices"></activity>
+        <activity
+            android:name=".Sholarship_Notices"
+            android:label="@string/title_activity_sholarship__notices"></activity>
+        <activity
+            android:name=".Contact_And_Feedback"
+            android:label="@string/title_activity_contact__and__feedback"></activity>
+        <activity
+            android:name=".Logout"
+            android:label="@string/title_activity_logout"></activity>
+        <activity
+            android:name=".TabAnimationActivity"
+            android:label="@string/title_activity_tab_animation"></activity>
+        <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".base"
+            android:label="@string/title_activity_base"></activity>
+        <activity
+            android:name=".walchandnetwork"
+            android:label="@string/title_activity_walchandnetwork"
+            android:theme="@style/AppTheme"></activity>
+    </application>
+
+</manifest>

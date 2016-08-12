@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:id="@+id/department"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Departmental Notices" />
+        <item
+            android:id="@+id/scholarship"
+            android:icon="@drawable/ic_school_black_24dp"
+            android:title="Scholarship Notice" />
+        <item
+            android:id="@+id/general"
+            android:icon="@drawable/ic_bookmark_black_24dp"
+            android:title="General Notice" />
+        <item
+            android:id="@+id/tpo"
+            android:icon="@drawable/ic_account_balance_black_24dp"
+            android:title="TPO Notice" />
+        <item
+            android:id="@+id/wce"
+            android:icon="@drawable/ic_action_toggle_star"
+            android:title="Walchand Network" />
+    </group>
+
+    <item android:title="Contact And Feedback">
+        <menu>
+            <item
+                android:id="@+id/contact"
+                android:icon="@drawable/ic_action_content_mail"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
